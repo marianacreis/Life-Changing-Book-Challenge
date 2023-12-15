@@ -4,14 +4,389 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      h1 {
+        font-size: 20px;
+        color: #6a8071;
+        font-family: "Poppins", sans-serif;
+        margin-left: 250px;
+        margin-top: 20px;
+      }
+
+      h2 {
+        color: #6a8071;
+        font-size: 60px;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .header {
+        background-color: #f0d2ba;
+        width: 100%;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .menu li {
+        list-style-type: none;
+        display: inline;
+      }
+
+      .menu-items {
+        color: #6a8071;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        padding: 20px;
+      }
+
+      .menu-items-last {
+        color: #6a8071;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        margin-right: 300px;
+        padding: 20px;
+      }
+
+      .menu li:hover {
+        transition: all 150ms ease;
+        opacity: 0.5;
+      }
+
+      .banner {
+        display: flex;
+        justify-content: center;
+        margin-top: -40px;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+      }
+
+      .banner-image {
+        width: 350px;
+        max-width: 100%;
+        height: auto;
+        margin-top: 50px;
+      }
+
+      .banner-text {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        font-family: "Poppins", sans-serif;
+        padding: 0;
+      }
+
+      .club-bannertext {
+        color: #6a8071;
+        font-size: 60px;
+        font-weight: 500;
+        margin-top: -20px;
+        margin-bottom: -5px;
+      }
+
+      .banner hr {
+        border: 2px solid #6a8071;
+        margin: 10px 0;
+        width: 80%;
+      }
+
+      .banner-summary {
+        color: #b88c7c;
+        font-size: 17px;
+        font-weight: 200;
+        font-family: "Poppins", sans-serif;
+        margin-top: 0;
+      }
+
+      .explore-button {
+        text-decoration: none;
+        display: inline-block;
+        width: 100px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        background-color: #b88c7c;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 5px;
+        margin-bottom: 30px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      .explore-button:hover {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all 150ms ease;
+      }
+
+      .explore-button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      /* Books List */
+
+      .books-right {
+        display: flex;
+        width: 800px;
+        background-color: #f8ede3;
+        font-family: "Poppins", sans-serif;
+        margin: 30px auto;
+        padding: 20px 40px;
+        border-radius: 8px;
+        position: relative;
+        max-width: 100%;
+      }
+
+      .book-covers-right {
+        width: 150px;
+        border-radius: 5px;
+        margin-right: 70px;
+      }
+
+      .books-text-right {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .books-title-right {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 400;
+        color: #697f71;
+      }
+
+      .books-authors-right {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 300;
+        color: #697f71b0;
+      }
+
+      .books-right hr {
+        border: 1px solid #6a8071;
+        margin: 10px 0;
+        width: 15%;
+      }
+
+      .books-summary-right {
+        margin: 0 0;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 0.572);
+      }
+
+      .buy-button-right {
+        color: white;
+        background-color: #b88c7c;
+        border: none;
+        width: 100px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        border-radius: 3px;
+        padding: 5px;
+        position: absolute;
+        left: 260px;
+        right: 0;
+        bottom: 20px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      .buy-button-right a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .buy-button-right:hover {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all 150ms ease;
+      }
+
+      .books-left {
+        display: flex;
+        margin: 30px auto;
+        width: 1000px;
+      }
+
+      .book-covers-left {
+        width: 150px;
+        margin-left: 20px;
+      }
+
+      .books-text-left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .books-left {
+        display: flex;
+        margin: 20px auto;
+        width: 800px;
+        background-color: #f8ede3;
+        font-family: "Poppins", sans-serif;
+        padding: 20px 40px;
+        border-radius: 3px;
+        position: relative;
+        max-width: 100%;
+      }
+
+      .book-covers-left {
+        width: 150px;
+        border-radius: 5px;
+      }
+
+      .books-text-left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .books-title-left {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 400;
+        color: #697f71;
+      }
+
+      .books-authors-left {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 300;
+        color: #697f71b0;
+      }
+
+      .books-left hr {
+        border: 1px solid #6a8071;
+        margin: 10px 0;
+        width: 15%;
+      }
+
+      .books-summary-left {
+        margin: 0 0;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 0.572);
+      }
+
+      .buy-button-left {
+        color: white;
+        background-color: #b88c7c;
+        border: none;
+        width: 100px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        border-radius: 3px;
+        padding: 5px;
+        position: absolute;
+        left: 38px;
+        right: 0;
+        bottom: 20px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      .buy-button-left a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .buy-button-left:hover {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all 150ms ease;
+      }
+
+      .bestsellers-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        background-color: #f0d2ba;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        margin-top: 50px;
+      }
+
+      .bestsellers-image {
+        width: 300px;
+      }
+
+      .bestsellers-title {
+        color: #6a8071;
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0;
+      }
+
+      .bestsellers-description {
+        color: #6a8071;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 4px;
+      }
+
+      .bestsellers-button {
+        color: white;
+        background-color: #697f71;
+        border: none;
+        width: 100px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        border-radius: 3px;
+        padding: 5px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      .bestsellers-button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .bestsellers-button:hover {
+        opacity: 0.5;
+        transition: all 150ms ease;
+      }
+
+      footer {
+        font-family: "Poppins", sans-serif;
+        font-size: 10px;
+        text-align: center;
+        color: #b88c7c9c;
+        background-color: #f0d2ba;
+        padding: 15px;
+      }
+
+      .footer-line {
+        width: 800px;
+        border: 0.5px solid #687e7177;
+        margin-bottom: 20px;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #b88c7ce0;
+      }
+
+      footer a:hover {
+        opacity: 0.6;
+        transition: all 150ms ease;
+      }
+    </style>
   </head>
+
   <body>
     <div class="header">
       <div class="menu">
